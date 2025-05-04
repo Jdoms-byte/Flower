@@ -1,0 +1,805 @@
+header img{
+    width: 40px;
+    height: 40px;
+  }
+  
+  .nav-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .nav-links .login-btn{
+    color: #f3f4f6;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .login-btn {
+     text-decoration: none;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  
+  .login-btn:hover {
+    background: var(--secondary-color);
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  
+  /* How It Works Section */
+  .how-it-works {
+    padding: 5rem 2rem;
+    background: var(--light-gray);
+  }
+  
+  .how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 5rem 2rem;
+    background: var(--white);
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  
+  
+  .testimonial {
+    padding: 2rem;
+    background: var(--light-gray);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial cite {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  /* Contact Section */
+
+  .contact-form-container {
+    background-color: lightgray; /* Temporary to check if the container is showing */
+    background-image: url('../image/Contact.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5rem 2rem;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/* Contact Form */
+.contact-form {
+  width: 100%; /* Form takes up full width */
+  max-width: 600px; /* Optional: Set a max-width for the form */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the form */
+  padding: 2rem;
+  border-radius: 8px; /* Optional: adds rounded corners to the form */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  margin-left: 100px;
+}
+
+/* Optional: to make the form more readable */
+.contact-form h2, .contact-form p, .contact-form input, .contact-form textarea {
+  color: black; /* Ensures the text is readable */
+}
+
+/* Add some styling for the form fields */
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc; /* Adds a subtle border around input fields */
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.contact-form button {
+  background-color: #7b4bb7; /* Customize your button color */
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #9c5fc4; /* Button hover effect */
+}
+
+/* FadeIn Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.contact {
+  padding: 0; /* Remove padding around the section */
+  background: var(--light-gray);
+  margin: 0; /* Remove any margin */
+}
+
+/* Form field styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: var(--white);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: var(--secondary-color);
+}
+
+  .contact {
+    background: var(--light-gray);
+  }
+  
+  .contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: 20rem;
+
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: var(--white);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background: var(--secondary-color);
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--text-color);
+    color: var(--white);
+    padding: 3rem 2rem;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 1rem;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-links a {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+  }
+  .nav-links a {
+    font-size: 18px;
+  }
+  
+  
+  /* Root Variables */
+  :root {  
+    --primary-color: #fee280;
+    --secondary-color: #165631;
+    --text-color: #fefeff;
+    --light-gray: #f3f4f6;
+    --white: #ffffff;
+  }
+  
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+  
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes scaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Header */
+  .header {
+     position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+    backdrop-filter: blur(10px); /* dagdag blur sa likod */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: slideUp 1s ease-in-out;
+  }
+  
+  /* Navigation Hover Effects */
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    display: flex; /* make them in row */
+    gap: 20px; /* adjust mo kung gano kalayo, example 20px */
+    list-style: none; /* tanggalin bullets */
+    align-items: center; /* center vertical */
+    padding: 0; /* tanggal default padding */
+    margin: 0; /* tanggal default margin */
+  }
+
+  .nav-links li a {
+    text-decoration: none; /* no underline */
+    color: inherit; /* same color sa parent */
+    padding: 1px 100px; /* dagdag konting padding sa links mismo */
+}
+  
+  .nav-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  /* Hero Section */
+  .hero {
+        width: 100%;
+        height: 100vh;
+        background: url('image/slide1.JPG') no-repeat center center/cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        margin: 0;
+        padding: 0;
+  }
+  
+  .hero-content {
+    max-width: 800px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+  
+  .get-button{
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
+  
+  .get-button:hover{
+    transform: translateY(-3px);
+    background: var(--secondary-color);
+  }
+  
+  /* Button Hover Animations */
+  .cta-button {
+    background-color: #0a682a;
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    background: var(--secondary-color);
+  }
+  
+  /* Feature Cards */
+
+  .features {
+    position: relative;
+    background-image: url("../image/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5rem 2rem;
+    text-align: center;
+    overflow: hidden;
+    height: 1000px; /* Increased height from 710px */
+}
+
+
+.features h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: soft shadow behind text */
+}
+
+.feature-cards {
+    position: relative;
+    z-index: 2; /* ABOVE the flowers */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+  
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Controls the gap between the cards */
+    max-width: 100%; /* Allow it to take the full available width */
+    margin: 0; /* Remove margins from the container */
+    padding: 0 10rem; /* Optional: slight padding on the sides to avoid touching the edge */
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.103); /* Slightly transparent white background */
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: scaleUp 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
+    /* Flex layout and fixed height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures that content is spaced out evenly */
+    height: 600px; /* Same height for all cards */
+    width: 100%;  /* Use full available width in grid */
+    box-sizing: border-box; /* Ensures padding doesn't affect size */
+}
+
+.feature-card img {
+    border-radius: 10px;
+    width: 400px;
+    height: 470px;
+    
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slight hover effect */
+}
+
+.feature-card button {
+    background-color: #6a1b9a; /* Purple background (can match your theme) */
+    color: white; /* White text */
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: auto; /* Ensures the button is placed at the bottom */
+}
+
+.feature-card button:hover {
+    background-color: #9c27b0; /* Lighter purple for hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card button:active {
+    background-color: #4a148c; /* Darker purple when clicked */
+    transform: translateY(1px); /* Slight press effect */
+}
+  
+  /* Steps Section */
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Testimonials */
+  .testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUp 1s ease-in-out;
+  }
+
+  /* Footer */
+  footer {
+    background: #222;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #0f8938; /* Highlight color */
+  }
+  
+  /* Social Media Links */
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    color: #fff;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #0f8938;
+    transform: scale(1.2);
+  }
+  
+  /* Copyright */
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      padding: 1rem;
+      text-align: center;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  .hero {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  }
+  
+  .hero-content {
+    padding: 20px;
+  }
+  
+  .get-button, .cta-button {
+    margin: 10px;
+  }
+ 
+  .fullscreen-img {
+    width: 100vw; /* full screen width */
+    height: 100vh; /* full screen height */
+    object-fit: cover; /* para hindi ma-stretch */
+  }
+
+  /* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-top: 50px; /* Added margin-top for space at the top */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.show-password label {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.submit-btn {
+  background-color: #7b4bb7;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #9c5fc4; /* Hover effect */
+}
+
+.register-link {
+  margin-top: 10px;
+}
+
+.register-link a {
+  color: #7b4bb7;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .modal-content {
+      width: 90%;
+  }
+}
+.buy-btn {
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,330 @@
+<?php 
+session_start();
+include 'db.php';
+
+if (!isset($_SESSION['username'])) {
+    header('Location: index.html');
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-ecommerce</title>
+    <link rel="stylesheet" href="image/Untitled design (4).png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Add inside your <head> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav-container d-flex justify-content-between align-items-center p-3">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="image/logo in flower.png" alt="Logo" class="logo-img">
+        </div>
+        
+        <!-- Mobile Menu Toggle Icon -->
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links d-flex list-unstyled mb-0">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="user_product_dashboard.php" class="nav-link">Product</a></li>
+            <li><a href="#Blogs" class="nav-link">Blogs</a></li>
+            <li><a href="#testimonials" class="nav-link">About Us</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <!-- Display User's Name -->
+            <li>welcome <span class="username"><?php echo htmlspecialchars($_SESSION['username']); ?></span></li>
+        </ul>
+
+        <!-- Enhanced Logout Button -->
+        <div class="nav-actions">
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 py-2 logout-btn">Log-out</a>
+        </div>
+    </nav>
+</header>
+
+
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm" action="login.php" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <!-- Wrap the checkbox and label inside a div -->
+                    <div class="show-password">
+                        <input type="checkbox" id="showPassword">
+                        <label for="showPassword">Show Password</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Login</button>
+                
+                <p class="register-link">Don't have an account? 
+                    <a href="register.php">Register</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+<section class="hero">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image/slide1.JPG" class="fullscreen-img" alt="Slide 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Streamline Your Requests & Documents Seamlessly</h1>
+                    <p>Transform your document processing workflow with our efficient and secure system.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="image/slide2.jpg" class="fullscreen-img" alt="Slide 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Fast. Secure. Reliable Document Processing</h1>
+                    <p>Experience a smarter way to manage your documents online.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="image/slide3.jpg" class="fullscreen-img" alt="Slide 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1>Track Your Requests in Real-Time</h1>
+                    <p>Stay updated every step of the way with live tracking and notifications.</p>
+                 
+                    
+                </div>
+            </div>
+        </div>
+
+       
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+    </div>
+</section>
+
+
+
+    <!-- Product Section -->
+    <section class="features" id="Product">
+        <br>
+        <br>
+        <br>
+           
+        <h2>Featured Products</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <img src="image/product1.JPG" alt="">
+                <button class="buy-now-btn">Buy now</button>
+            </div>
+            <div class="feature-card">
+                <img src="image/product2.JPG" alt="">
+                <button>Buy now</button>
+            </div>
+            <div class="feature-card">
+                <img src="image/product3.JPG" alt="">
+                <button>Buy now</button>
+            </div>
+          
+        </div>
+    </section>
+
+   <!-- Blogs Section -->
+<section class="Blogs" id="Blogs">
+    <div class="container-fluid px-0" > <!-- Full width with no side padding -->
+
+        <div id="howItWorksCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active position-relative">
+                    <img src="image/blogs1.png" class="d-block w-100" alt="Submit Request" style="height: 700px; object-fit: cover;">
+
+                    <!-- Button Positioned Lower and Right -->
+                    <div class="position-absolute" style="top: 80%; left: 73%; transform: translate(-50%, -50%);">
+                        <button class="shop-now-btn btn btn-lg" style="background-color: #7b4bb7; border: none; border-radius: 50px; padding: 12px 40px; font-size: 18px;">
+                            Shop Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Add this CSS for hover effect and animation -->
+                <style>
+                    .shop-now-btn {
+                        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background and scale */
+                        cursor: pointer; /* Ensures it's clickable */
+                    }
+
+                    .shop-now-btn:hover {
+                        background-color: #994fca; /* Lighter shade of purple on hover */
+                        transform: scale(1.1); /* Slight scale-up effect */
+                    }
+                </style>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="image/blogs2.png" class="d-block w-100" alt="Download Document" style="height: 700px; object-fit: cover;">
+                </div>
+
+
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#howItWorksCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#howItWorksCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators mt-4">
+                <button type="button" data-bs-target="#howItWorksCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#howItWorksCarousel" data-bs-slide-to="1"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- about us Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>About us</h2>
+        <div class="testimonial-container">
+         <h1>hahahah</h1>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+ 
+    <!-- Add the class contact-form-container to the section -->
+    <div class="contact-form-container">
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <!-- Navigation Links -->
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="#"><i class='bx bxl-facebook-circle'></i> </a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+        </div>
+
+        <!-- Copyright and Credits -->
+        <p class="copyright">&copy; 2025 E-Request System. All rights reserved.</p>
+        <p>Created By: June Dominic G. Laurente</p>
+    </div>
+</footer>
+
+
+    <!-- JavaScript -->
+    <script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
+
+<script>
+  // Get modal elements
+  const modal = document.getElementById("loginModal");
+    const loginBtn = document.querySelector(".login-btn");
+    const closeBtn = document.querySelector(".close");
+
+    // Open the modal
+    loginBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.style.display = "block";
+    });
+
+    // Close the modal when clicking the 'x'
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Close the modal when clicking outside the modal content
+    window.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+    
+    // Show/Hide password
+    const showPasswordCheckbox = document.getElementById('showPassword');
+    const passwordInput = document.getElementById('password');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>
